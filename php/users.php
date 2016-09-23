@@ -1,9 +1,11 @@
 <?php
 
+//return all users in table
 if(isset($_GET['action']) && $_GET['action'] == 'index'){
     echo execute_query("SELECT * FROM users");
 }
 
+//save new or update users info
 if(isset($_POST['action']) && $_POST['action'] == 'save'){
 
     $name = $_POST['name'];
@@ -19,9 +21,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'save'){
     }
 
     echo execute_query($query);
-    //echo $query;
 }
 
+//delete user
 if(isset($_POST['action']) && $_POST['action'] == 'delete'){
 
     $id = $_POST['id'];
